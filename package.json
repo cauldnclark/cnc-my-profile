@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@types/graphql": "^14.5.0",
     "@types/node": "^14.14.34",
     "nodemon": "^2.0.7",
     "rimraf": "^3.0.2",
@@ -14,5 +15,11 @@
     "dev": "nodemon",
     "build": "rimraf ./build && tsc",
     "start": "yarn build && node ./build/index.js"
+  },
+  "dependencies": {
+    "apollo-server": "^2.21.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "graphql": "^15.5.0"
   }
 }
