@@ -1,9 +1,9 @@
 import { Document, Schema } from "mongoose";
-import { mongo } from "src/database";
+import { mongo } from "../../database";
 
 export interface Jc extends Document {
   name: string;
-  age: string;
+  age: number;
   email: string;
 }
 

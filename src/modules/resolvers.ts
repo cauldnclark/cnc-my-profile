@@ -1,12 +1,12 @@
-type HiInput = {
-  times: number;
-};
+import { jcMutationResolvers } from "./jc/JcMutationResolver";
+import { jcResolvers } from "./jc/JcResolver";
 
 export const resolvers = {
   Query: {
     hello: () => "world",
-    hi: (_: any, b: HiInput): number => {
-      return 10 * b.times;
-    },
+    ...jcResolvers,
+  },
+  Mutation: {
+    ...jcMutationResolvers,
   },
 };

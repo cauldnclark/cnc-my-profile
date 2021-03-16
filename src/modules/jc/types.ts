@@ -1,5 +1,9 @@
 export type JcCreate = {
   name: string;
-  age: string;
+  age: number;
   email: string;
+};
+
+export type GetJc = {
+  id: string;
 };
