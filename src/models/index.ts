@@ -1,5 +1,6 @@
-import mongoose, { Mongoose } from "mongoose";
+require("dotenv").config();
 
+import mongoose, { Mongoose } from "mongoose";
 import User from "./UserModel";
 import Message from "./MessageModel";
 
@@ -7,10 +8,10 @@ import Message from "./MessageModel";
 
 const connectDb = (): Promise<Mongoose> => {
   try {
-    return mongoose.connect(
-      "mongodb+srv://local:JudRWE2cQszckyd@moneyants.uxtzx.mongodb.net/kamote?retryWrites=true&w=majority",
-      { useNewUrlParser: true, useUnifiedTopology: true }
-    );
+    return mongoose.connect(process.env.MONGO_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
   } catch (error) {
     console.log("[STATUS]: Could not connect");
   }
