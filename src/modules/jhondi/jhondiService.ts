@@ -6,31 +6,31 @@ export class JhondiService {
   // THESE METHODS ARE FOR MUTATIONS
 
   async create(args: createJhondi): Promise<IJhondi> {
-    const newJc = new JhondiSchema(args);
-
-    return newJc.save();
+    const newJhondi = new JhondiSchema(args);
+    return newJhondi.save();
   }
 
   // THESE METHODS ARE FOR QUERIES
 
   async findById(id: string): Promise<IJhondi> {
-    return JhondiSchema.findById(id);
+    return await JhondiSchema.findById(id);
   }
 
-  //   updateJhondi
+  /*
+   * @params: id of String and where data
+   * @return: new udpatedDocument
+   */
   async update(data: updateJhondi): Promise<IJhondi> {
-    try {
-      const { id, where } = data;
-      const foundData = await JhondiSchema.findByIdAndUpdate(id, where, {
-        new: true,
-      });
-      return foundData;
-    } catch (error) {
-      throw new Error(error);
-    }
+    const { id, where } = data;
+    return await JhondiSchema.findByIdAndUpdate(id, where, {
+      new: true,
+    });
   }
 
+  /*
+   * @return array of documents
+   */
   async findAll(): Promise<IJhondi[]> {
-    return JhondiSchema.find({});
+    return await JhondiSchema.find({});
   }
 }

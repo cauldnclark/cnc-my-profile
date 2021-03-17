@@ -5,8 +5,8 @@ export const typeDefs = gql`
     hello: String
     hi(times: Int!): Float
     getJc(id: String): Jc
-    getJhondi(id: String): Jhondi
-    getAllJhondi: [Jhondi]!
+    getJhondi(id: String): Jhondi!
+    getAllJhondi: [Jhondi]
   }
 
   type Mutation {
@@ -29,9 +29,11 @@ export const typeDefs = gql`
   }
 
   type Jhondi {
-    _id: String
-    name: String
-    age: Int
-    email: String
+    _id: String!
+    name: String!
+    age: Int!
+    email: String!
+    createdAt: String
+    updatedAt: String
   }
 `;
