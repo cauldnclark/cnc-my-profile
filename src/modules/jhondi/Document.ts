@@ -5,9 +5,3 @@ export interface IJhondi extends Document {
   age: string;
   email: string;
 }
-
-export interface Jc extends Document {
-  name: string;
-  age: number;
-  email: string;
-}

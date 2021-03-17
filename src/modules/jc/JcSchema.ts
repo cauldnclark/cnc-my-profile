@@ -1,6 +1,11 @@
 import { Document, Schema } from 'mongoose';
 import { mongo } from '../../database';
-import { Jc } from '../Document';
+
+export interface Jc extends Document {
+  name: string;
+  age: number;
+  email: string;
+}
 
 const JcSchema: Schema<Jc> = new Schema(
   {
