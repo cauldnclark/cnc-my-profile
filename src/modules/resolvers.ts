@@ -1,9 +1,9 @@
-import { jcMutationResolvers } from "./jc/JcMutationResolver";
-import { jcResolvers } from "./jc/JcResolver";
+import { jcMutationResolvers } from './jc/JcMutationResolver';
+import { jcResolvers } from './jc/JcResolver';
 
 export const resolvers = {
   Query: {
-    hello: () => "world",
+    hello: () => 'world',
     ...jcResolvers,
   },
   Mutation: {
