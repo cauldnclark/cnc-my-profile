@@ -1,4 +1,4 @@
-import { JhondiService } from './JhondiService';
+import { JhondiService } from './jhondiService';
 import { getJhondi } from './types';
 
 export const jhondiResolvers = {

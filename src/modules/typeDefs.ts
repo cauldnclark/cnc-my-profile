@@ -19,4 +19,17 @@ export const typeDefs = gql`
     age: Int
     email: String
   }
+
+  input InputJhondi {
+    name: String!
+    age: Int!
+    email: String!
+  }
+
+  type Jhondi {
+    _id: String
+    name: String
+    age: Int
+    email: String
+  }
 `;
