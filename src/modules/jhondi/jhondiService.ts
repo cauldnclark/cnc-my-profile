@@ -1,4 +1,4 @@
-import JhondiSchema from './jhondiSchema';
+import JhondiSchema from './JhondiSchema';
 import { createJhondi, getJhondi, updateJhondi } from './types';
 import { IJhondi } from './Document';
 
@@ -21,16 +21,16 @@ export class JhondiService {
   async update(data: updateJhondi): Promise<IJhondi> {
     try {
       const { id, where } = data;
-      const updateJhondi = await JhondiSchema.findByIdAndUpdate(
-        id,
-        { set: where },
-        {
-          new: true,
-        }
-      );
-      return updateJhondi;
+      const foundData = await JhondiSchema.findByIdAndUpdate(id, where, {
+        new: true,
+      });
+      return foundData;
     } catch (error) {
       throw new Error(error);
     }
+  }
+
+  async findAll(): Promise<IJhondi[]> {
+    return JhondiSchema.find({});
   }
 }

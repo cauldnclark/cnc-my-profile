@@ -4,9 +4,15 @@ export type createJhondi = {
   email: string;
 };
 
+export type inputJhondi = {
+  name: string;
+  age: number;
+  email: string;
+};
+
 export type updateJhondi = {
   id: string;
-  where: createJhondi;
+  where: inputJhondi;
 };
 
 export type getJhondi = {

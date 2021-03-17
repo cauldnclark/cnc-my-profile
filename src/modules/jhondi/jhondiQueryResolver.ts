@@ -2,9 +2,13 @@ import { JhondiService } from './jhondiService';
 import { getJhondi } from './types';
 
 export const jhondiResolvers = {
-  getJc: async (_: any, args: getJhondi) => {
-    const jcService = new JhondiService();
+  getJhondi: async (_: any, args: getJhondi) => {
+    const jhondiService = new JhondiService();
 
-    return jcService.findById(args.id);
+    return jhondiService.findById(args.id);
+  },
+
+  getAllJhondi: async (_: any) => {
+    return new JhondiService().findAll();
   },
 };

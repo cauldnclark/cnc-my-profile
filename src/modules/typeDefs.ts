@@ -5,6 +5,8 @@ export const typeDefs = gql`
     hello: String
     hi(times: Int!): Float
     getJc(id: String): Jc
+    getJhondi(id: String): Jhondi
+    getAllJhondi: [Jhondi]!
   }
 
   type Mutation {

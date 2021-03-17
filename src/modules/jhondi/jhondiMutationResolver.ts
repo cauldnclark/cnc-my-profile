@@ -8,8 +8,8 @@ export const jhondiMutationResolvers = {
     return jhondiService.create(args);
   },
 
-  updateJhondi: async (_: any, where: updateJhondi) => {
+  updateJhondi: async (_: any, args: updateJhondi) => {
     const jhondiService = new JhondiService();
-    return jhondiService.update(where);
+    return jhondiService.update(args);
   },
 };
