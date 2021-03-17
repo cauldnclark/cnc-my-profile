@@ -5,6 +5,8 @@ import { jhondiResolvers } from './jhondi/jhondiQueryResolver';
 import { markyMutationResolvers } from './marky/markyMutationResolver';
 import { markyResolvers } from './marky/markyResolver';
 
+import { aceMutationResolvers } from './ace/AceMutationResolvers';
+
 export const resolvers = {
   Query: {
     hello: () => 'world',
@@ -12,9 +14,11 @@ export const resolvers = {
     ...jhondiResolvers,
     ...markyResolvers,
   },
+
   Mutation: {
     ...jcMutationResolvers,
     ...jhondiMutationResolvers,
     ...markyMutationResolvers,
+    ...aceMutationResolvers,
   },
 };
