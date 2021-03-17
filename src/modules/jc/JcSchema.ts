@@ -1,5 +1,5 @@
-import { Document, Schema } from "mongoose";
-import { mongo } from "../../database";
+import { Document, Schema } from 'mongoose';
+import { mongo } from '../../database';
 
 export interface Jc extends Document {
   name: string;
@@ -16,4 +16,4 @@ const JcSchema: Schema<Jc> = new Schema(
   { timestamps: true }
 );
 
-export default mongo.model<Jc>("Jc", JcSchema);
+export default mongo.model<Jc>('Jc', JcSchema);
