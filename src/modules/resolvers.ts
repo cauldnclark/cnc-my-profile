@@ -4,7 +4,7 @@ import { jhondiMutationResolvers } from './jhondi/jhondiMutationResolver';
 import { jhondiResolvers } from './jhondi/jhondiQueryResolver';
 import { markyMutationResolvers } from './marky/markyMutationResolver';
 import { markyResolvers } from './marky/markyResolver';
-
+import { aceQueryResolvers } from './ace/AceQueryResolvers';
 import { aceMutationResolvers } from './ace/AceMutationResolvers';
 
 export const resolvers = {
@@ -13,6 +13,7 @@ export const resolvers = {
     ...jcResolvers,
     ...jhondiResolvers,
     ...markyResolvers,
+    ...aceQueryResolvers,
   },
 
   Mutation: {

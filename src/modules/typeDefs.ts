@@ -1,5 +1,7 @@
 import { gql } from 'apollo-server';
-import { aceMutationTypeDefs } from './ace/AceMutationTypesDefs';
+import { aceQueryTypeDefs } from './ace/AceQueryTypeDefs';
+import { aceMutationTypeDefs } from './ace/AceMutationTypeDefs';
+import { aceType } from './ace/AceType';
 
 export const typeDefs = gql`
   type Query {
@@ -10,6 +12,8 @@ export const typeDefs = gql`
     getAllJhondi: [Jhondi]
     getMarky(id: ID!): Marky
     getAllMarky: [Marky]!
+
+    ${aceQueryTypeDefs}
   }
 
   type Mutation {
@@ -61,10 +65,5 @@ export const typeDefs = gql`
     updatedAt: String
   }
 
-  type Ace {
-    _id: String
-    name: String
-    age: Int
-    email: String
-  }
+  ${aceType}
 `;
