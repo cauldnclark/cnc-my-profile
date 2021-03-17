@@ -5,7 +5,6 @@ export interface AceInterface extends Document {
   name: string;
   age: number;
   email: string;
-  errorMsg: string;
 }
 
 const AceSchema: Schema<AceInterface> = new Schema(
