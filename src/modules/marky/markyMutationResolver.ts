@@ -1,5 +1,5 @@
-import { MarkyService } from "./markyService";
-import { MarkyInput, UpdateMarky} from "./types";
+import { MarkyService } from "./MarkyService";
+import { MarkyInput, UpdateMarky } from "./types";
 
 export const markyMutationResolvers = {
   createMarky: async (_: any, { input }: MarkyInput) => {
@@ -9,6 +9,6 @@ export const markyMutationResolvers = {
 
   updateMarky: async (_: any, args: UpdateMarky) => {
     const markyService = new MarkyService();
-    return await markyService.updateMarky(args)
+    return await markyService.updateMarky(args);
   },
 };

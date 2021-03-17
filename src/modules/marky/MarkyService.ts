@@ -2,8 +2,6 @@ import MarkySchema from "./MarkySchema";
 import { UpdateMarky, MarkyCreate } from "./types";
 import { Marky } from "./MarkySchema";
 
-
-
 export class MarkyService {
   // THESE METHODS ARE FOR MUTATIONS
 
@@ -16,17 +14,20 @@ export class MarkyService {
 
   async findById(id: string): Promise<Marky> {
     const foundMarky = await MarkySchema.findById(id);
-    return foundMarky
+    return foundMarky;
   }
 
-  async updateMarky(args:UpdateMarky): Promise<Marky> {
-    const updateMarky = await MarkySchema.findByIdAndUpdate(args.id, args.input, { new: true });
-    return updateMarky
+  async updateMarky(args: UpdateMarky): Promise<Marky> {
+    const updateMarky = await MarkySchema.findByIdAndUpdate(
+      args.id,
+      args.input,
+      { new: true, useFindAndModify: false }
+    );
+    return updateMarky;
   }
 
   async findAll(): Promise<Marky[]> {
     const foundMarky = await MarkySchema.find();
-    return foundMarky
+    return foundMarky;
   }
-
 }
