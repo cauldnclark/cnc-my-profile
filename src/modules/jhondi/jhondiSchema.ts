@@ -7,8 +7,6 @@ const JhondiSchema: Schema<IJhondi> = new Schema(
     name: { type: String, required: true },
     age: { type: Number, required: true },
     email: { type: String, required: true },
-    created_at: { type: Date },
-    updated_at: { type: Date },
   },
   { timestamps: true }
 );
