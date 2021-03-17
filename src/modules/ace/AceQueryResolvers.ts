@@ -7,4 +7,10 @@ export const aceQueryResolvers = {
 
     return aceService.findById(args.id);
   },
+
+  getAllAce: async (_: any) => {
+    const aceService = new AceService();
+
+    return aceService.getAllAce();
+  },
 };

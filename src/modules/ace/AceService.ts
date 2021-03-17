@@ -13,6 +13,14 @@ export class AceService {
     return AceSchema.findById(id);
   }
 
+  async getAllAce(): Promise<AceInterface[] | Error> {
+    try {
+      return AceSchema.find();
+    } catch (error) {
+      return new Error(`${error.message}`);
+    }
+  }
+
   /** These methods are for mutations */
   async createAce(args: CreateAce): Promise<AceInterface | Error> {
     try {
