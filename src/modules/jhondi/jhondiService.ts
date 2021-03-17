@@ -17,7 +17,7 @@ export class JhondiService {
   }
 
   /*
-   * @params: id of String and where data
+   * @params: id of String and data
    * @return: new udpatedDocument
    */
   async update(data: updateJhondi): Promise<IJhondi> {

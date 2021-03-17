@@ -7,12 +7,23 @@ export const typeDefs = gql`
     getJc(id: String): Jc
     getJhondi(id: String): Jhondi!
     getAllJhondi: [Jhondi]
+    getMarky(id: ID!): Marky
+    getAllMarky: [Marky]!
   }
 
   type Mutation {
     createJc(name: String, age: Int, email: String): Jc
     createJhondi(name: String!, age: Int, email: String): Jhondi
     updateJhondi(id: String, where: InputJhondi!): Jhondi
+    createMarky(input: MarkyInput): Marky
+    updateMarky(id: ID!, input: MarkyInput): Marky
+  }
+
+  input MarkyInput {
+    name: String
+    age: Int
+    email: String
+    facebook: String
   }
 
   type Jc {
@@ -33,6 +44,16 @@ export const typeDefs = gql`
     name: String!
     age: Int!
     email: String!
+    createdAt: String
+    updatedAt: String
+  }
+
+  type Marky {
+    _id: String
+    name: String
+    age: Int
+    email: String
+    facebook: String
     createdAt: String
     updatedAt: String
   }
