@@ -9,8 +9,8 @@ export const ianQueryResolvers = {
   },
 
   getAllIan: async (_: any) => {
-    const aceService = new IanService();
+    const ianService = new IanService();
 
-    return aceService.getAllIan();
+    return ianService.getAllIan();
   },
 };
