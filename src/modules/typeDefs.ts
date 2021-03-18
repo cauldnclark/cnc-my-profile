@@ -28,19 +28,34 @@ export const typeDefs = gql`
     updateJhondi(id: String, where: InputJhondi!): Jhondi
     createMarky(input: MarkyInput): Marky
     updateMarky(id: ID!, input: MarkyInput): Marky
-
+    deleteMarky(id:ID): MarkyNotification
     ${aceMutationTypeDefs}
 
     ${ianMutationTypeDefs}
   }
 
+  type Marky {
+    id:         ID
+    name:       String
+    age:        Int
+    email:      String
+    facebook:   String
+    createdAt:  String
+    updatedAt:  String
+    status:     String
+  }
+  
   input MarkyInput {
     name: String
     age: Int
     email: String
     facebook: String
   }
-
+  type MarkyNotification {
+        id:      ID
+        message: String!
+        status:  Boolean
+    }
   type Jc {
     _id: String
     name: String
@@ -63,15 +78,7 @@ export const typeDefs = gql`
     updatedAt: String
   }
 
-  type Marky {
-    _id: String
-    name: String
-    age: Int
-    email: String
-    facebook: String
-    createdAt: String
-    updatedAt: String
-  }
+
 
   ${aceType}
 
