@@ -6,6 +6,8 @@ import { markyMutationResolvers } from './marky/markyMutationResolver';
 import { markyResolvers } from './marky/markyResolver';
 import { aceQueryResolvers } from './ace/AceQueryResolvers';
 import { aceMutationResolvers } from './ace/AceMutationResolvers';
+import { ianMutationResolvers } from './ian/resolvers/IanMutationResolvers';
+import { ianQueryResolvers } from './ian/resolvers/IanQueryResolvers';
 
 export const resolvers = {
   Query: {
@@ -14,6 +16,7 @@ export const resolvers = {
     ...jhondiResolvers,
     ...markyResolvers,
     ...aceQueryResolvers,
+    ...ianQueryResolvers
   },
 
   Mutation: {
@@ -21,5 +24,6 @@ export const resolvers = {
     ...jhondiMutationResolvers,
     ...markyMutationResolvers,
     ...aceMutationResolvers,
+    ...ianMutationResolvers,
   },
 };
