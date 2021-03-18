@@ -1,3 +1,5 @@
+// Mutation Type Defs
+
 export const ianMutationTypeDefs: string = `
   createIan(
     name: String!,
