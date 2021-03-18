@@ -34,6 +34,11 @@ export const typeDefs = gql`
     ${ianMutationTypeDefs}
   }
 
+
+  type Subscription {
+    jcCreated(alias: String!): Jc
+  }
+
   type Marky {
     id:         ID
     name:       String
@@ -44,7 +49,7 @@ export const typeDefs = gql`
     updatedAt:  String
     status:     String
   }
-  
+
   input MarkyInput {
     name: String
     age: Int
@@ -61,6 +66,7 @@ export const typeDefs = gql`
     name: String
     age: Int
     email: String
+    alias: String
   }
 
   input InputJhondi {

@@ -4,6 +4,14 @@ export type JcCreate = {
   email: string;
 };
 
+export type JcAlias = {
+  alias: string;
+};
+
+export type JcCreatedAlias = {
+  jcCreated: JcCreate & JcAlias;
+};
+
 export type GetJc = {
   id: string;
 };
