@@ -1,4 +1,4 @@
-import JhondiSchema from './JhondiSchema';
+import JhondiSchema from './jhondiSchema';
 import { createJhondi, getJhondi, updateJhondi } from './types';
 import { IJhondi } from './Document';
 

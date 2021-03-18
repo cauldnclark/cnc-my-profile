@@ -3,6 +3,10 @@ import { aceQueryTypeDefs } from './ace/AceQueryTypeDefs';
 import { aceMutationTypeDefs } from './ace/AceMutationTypeDefs';
 import { aceType } from './ace/AceType';
 
+import { ianMutationTypeDefs } from './ian/type-defs/IanMutationTypeDefs';
+import { ianQueryTypeDefs } from './ian/type-defs/IanQueryTypeDefs';
+import { ianType } from './ian/types/IanType';
+
 export const typeDefs = gql`
   type Query {
     hello: String
@@ -14,6 +18,8 @@ export const typeDefs = gql`
     getAllMarky: [Marky]!
 
     ${aceQueryTypeDefs}
+
+    ${ianQueryTypeDefs}
   }
 
   type Mutation {
@@ -24,6 +30,8 @@ export const typeDefs = gql`
     updateMarky(id: ID!, input: MarkyInput): Marky
 
     ${aceMutationTypeDefs}
+
+    ${ianMutationTypeDefs}
   }
 
   input MarkyInput {
@@ -66,4 +74,6 @@ export const typeDefs = gql`
   }
 
   ${aceType}
+
+  ${ianType}
 `;
