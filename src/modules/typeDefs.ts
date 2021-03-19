@@ -37,6 +37,8 @@ export const typeDefs = gql`
 
   type Subscription {
     jcCreated(alias: String!): Jc
+    jhondiCreated(alias: String!): Jhondi
+    jhondiUpdated(alias: String!): Jhondi
 
     ${ianMutationSubscriptions}
   }

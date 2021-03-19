@@ -34,7 +34,7 @@ export class JhondiService {
    * @params: id of String and data
    * @return: new udpatedDocument
    */
-  async update(data: updateJhondi): Promise<IJhondi> {
+  async update(data: any): Promise<IJhondi> {
     const { id, where } = data;
     return await JhondiSchema.findByIdAndUpdate(id, where, {
       new: true,

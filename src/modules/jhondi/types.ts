@@ -7,6 +7,18 @@ export type responseJhondi = {
   updatedAt: String;
 };
 
+export type alias = {
+  alias: String;
+};
+
+export type jhondiCreatedAlias = {
+  jhondiCreated: alias & responseJhondi;
+};
+
+export type jhondiUpdatedAlias = {
+  jhondiUpdated: alias & responseJhondi;
+};
+
 export type createJhondi = {
   name: string;
   age: number;
@@ -15,12 +27,9 @@ export type createJhondi = {
 
 export type updateJhondi = {
   id: string;
-  where: createJhondi;
+  where: responseJhondi;
 };
 
 export type getJhondi = {
   id: string;
 };
-
-export const REGISTER = 'REGISTER';
-export const LOGIN = 'LOGIN';

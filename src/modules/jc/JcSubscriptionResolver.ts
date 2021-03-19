@@ -8,6 +8,10 @@ export const jcSubscriptionResolvers = {
     subscribe: withFilter(
       () => pubsub.asyncIterator([JC_CREATED]),
       (payload: JcCreatedAlias, variables: JcAlias) => {
+        console.log({
+          payload,
+          variables,
+        });
         return payload.jcCreated.email === variables.alias;
       }
     ),
