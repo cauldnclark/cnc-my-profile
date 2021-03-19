@@ -5,6 +5,7 @@ import { aceType } from './ace/AceType';
 
 import { ianMutationTypeDefs } from './ian/type-defs/IanMutationTypeDefs';
 import { ianQueryTypeDefs } from './ian/type-defs/IanQueryTypeDefs';
+import { ianMutationSubscriptions } from './ian/subscriptions/IanMutationSubscriptions';
 import { ianType } from './ian/types/IanType';
 
 export const typeDefs = gql`
@@ -37,6 +38,8 @@ export const typeDefs = gql`
 
   type Subscription {
     jcCreated(alias: String!): Jc
+
+    ${ianMutationSubscriptions}
   }
 
   type Marky {

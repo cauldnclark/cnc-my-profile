@@ -15,4 +15,17 @@
     age: number;
     email: string;
   };
+
+  export type IanAlias = {
+    alias: string;
+  };
+  
+  export type IanCreatedAlias = {
+    ianCreated: CreateIan & IanAlias;
+  };
+
+  export type IanUpdatedAlias = {
+    ianUpdated: UpdateIan & IanAlias;
+  };
+  
   
