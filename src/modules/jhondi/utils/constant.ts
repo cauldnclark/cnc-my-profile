@@ -1,0 +1,2 @@
+export const CREATED_JHONDI = 'CREATED_JHONDI';
+export const UPDATED_JHONDI = 'UPDATED_JHONDI';
