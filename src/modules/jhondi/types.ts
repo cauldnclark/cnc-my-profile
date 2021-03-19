@@ -12,3 +12,6 @@ export type updateJhondi = {
 export type getJhondi = {
   id: string;
 };
+
+export const REGISTER = 'REGISTER';
+export const LOGIN = 'LOGIN';

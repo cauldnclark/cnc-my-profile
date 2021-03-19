@@ -57,8 +57,8 @@ export const typeDefs = gql`
   type Jhondi {
     _id: String!
     name: String!
-    age: Int!
-    email: String!
+    age: Int
+    email: String
     createdAt: String
     updatedAt: String
   }
