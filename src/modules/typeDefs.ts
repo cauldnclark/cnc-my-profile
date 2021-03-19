@@ -5,6 +5,7 @@ import { aceType } from './ace/AceType';
 
 import { ianMutationTypeDefs } from './ian/type-defs/IanMutationTypeDefs';
 import { ianQueryTypeDefs } from './ian/type-defs/IanQueryTypeDefs';
+import { ianMutationSubscriptions } from './ian/subscriptions/IanMutationSubscriptions';
 import { ianType } from './ian/types/IanType';
 
 export const typeDefs = gql`
@@ -28,10 +29,28 @@ export const typeDefs = gql`
     updateJhondi(id: String, where: InputJhondi!): Jhondi
     createMarky(input: MarkyInput): Marky
     updateMarky(id: ID!, input: MarkyInput): Marky
-
+    deleteMarky(id:ID): MarkyNotification
     ${aceMutationTypeDefs}
 
     ${ianMutationTypeDefs}
+  }
+
+
+  type Subscription {
+    jcCreated(alias: String!): Jc
+
+    ${ianMutationSubscriptions}
+  }
+
+  type Marky {
+    id:         ID
+    name:       String
+    age:        Int
+    email:      String
+    facebook:   String
+    createdAt:  String
+    updatedAt:  String
+    status:     String
   }
 
   input MarkyInput {
@@ -40,12 +59,17 @@ export const typeDefs = gql`
     email: String
     facebook: String
   }
-
+  type MarkyNotification {
+        id:      ID
+        message: String!
+        status:  Boolean
+    }
   type Jc {
     _id: String
     name: String
     age: Int
     email: String
+    alias: String
   }
 
   input InputJhondi {
@@ -63,15 +87,7 @@ export const typeDefs = gql`
     updatedAt: String
   }
 
-  type Marky {
-    _id: String
-    name: String
-    age: Int
-    email: String
-    facebook: String
-    createdAt: String
-    updatedAt: String
-  }
+
 
   ${aceType}
 

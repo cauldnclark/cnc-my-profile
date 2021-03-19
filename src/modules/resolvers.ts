@@ -8,6 +8,9 @@ import { aceQueryResolvers } from './ace/AceQueryResolvers';
 import { aceMutationResolvers } from './ace/AceMutationResolvers';
 import { ianMutationResolvers } from './ian/resolvers/IanMutationResolvers';
 import { ianQueryResolvers } from './ian/resolvers/IanQueryResolvers';
+import { jcSubscriptionResolvers } from './jc/JcSubscriptionResolver';
+import { ianSubscriptionResolvers } from './ian/resolvers/IanSubscriptionResolvers';
+
 
 export const resolvers = {
   Query: {
@@ -25,5 +28,10 @@ export const resolvers = {
     ...markyMutationResolvers,
     ...aceMutationResolvers,
     ...ianMutationResolvers,
+  },
+
+  Subscription: {
+    ...jcSubscriptionResolvers,
+    ...ianSubscriptionResolvers,
   },
 };
