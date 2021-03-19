@@ -11,7 +11,6 @@ import { ianQueryResolvers } from './ian/resolvers/IanQueryResolvers';
 import { jcSubscriptionResolvers } from './jc/JcSubscriptionResolver';
 import { ianSubscriptionResolvers } from './ian/resolvers/IanSubscriptionResolvers';
 
-
 export const resolvers = {
   Query: {
     hello: () => 'world',

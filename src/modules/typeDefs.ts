@@ -14,7 +14,7 @@ export const typeDefs = gql`
     hi(times: Int!): Float
     getJc(id: String): Jc
     getJhondi(id: String): Jhondi!
-    getAllJhondi: [Jhondi]
+    getAllJhondi: [Jhondi]!
     getMarky(id: ID!): Marky
     getAllMarky: [Marky]!
 
@@ -31,7 +31,6 @@ export const typeDefs = gql`
     updateMarky(id: ID!, input: MarkyInput): Marky
     deleteMarky(id:ID): MarkyNotification
     ${aceMutationTypeDefs}
-
     ${ianMutationTypeDefs}
   }
 
