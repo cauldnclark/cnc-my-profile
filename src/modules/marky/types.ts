@@ -13,12 +13,22 @@ export type MarkyCreate = {
     email: string;
     facebook?: string;
 };
+export type StatusMarky = {
+  status: string
+}
 
 export type UpdateMarky = {
   input: MarkyInput;
   id: string;
 }
+
 export type GetMarky = {
   id: string;
+};
+
+export type MarkyNotification = {
+  id?:      string;
+  message:  string;
+  status:   boolean;
 };
   
