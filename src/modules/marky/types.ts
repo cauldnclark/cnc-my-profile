@@ -32,3 +32,15 @@ export type MarkyNotification = {
   status:   boolean;
 };
   
+
+
+export type MarkyAlias = {
+  alias: string;
+};
+
+export type MarkyCreatedAlias = {
+  markyCreated: MarkyCreate & MarkyAlias;
+};
+export type MarkyUpdatedAlias = {
+  markyUpdated: UpdateMarky & MarkyAlias;
+};

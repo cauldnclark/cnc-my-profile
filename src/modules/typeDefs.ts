@@ -19,7 +19,6 @@ export const typeDefs = gql`
     getAllMarky: [Marky]!
 
     ${aceQueryTypeDefs}
-
     ${ianQueryTypeDefs}
   }
 
@@ -31,13 +30,15 @@ export const typeDefs = gql`
     updateMarky(id: ID!, input: MarkyInput): Marky
     deleteMarky(id:ID): MarkyNotification
     ${aceMutationTypeDefs}
-
     ${ianMutationTypeDefs}
   }
 
 
   type Subscription {
     jcCreated(alias: String!): Jc
+    markyCreated(alias:String!): Marky
+    markyUpdated(alias:String!): Marky
+    markyDeleted: String
 
     ${ianMutationSubscriptions}
   }
