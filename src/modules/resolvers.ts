@@ -16,7 +16,7 @@ export const resolvers = {
     ...jhondiResolvers,
     ...markyResolvers,
     ...aceQueryResolvers,
-    ...ianQueryResolvers
+    ...ianQueryResolvers,
   },
 
   Mutation: {
