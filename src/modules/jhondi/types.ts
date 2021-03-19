@@ -11,12 +11,19 @@ export type alias = {
   alias: String;
 };
 
+export type aliasJhondi = {
+  _id: String | number;
+  name: string;
+  age: number;
+  email: string;
+};
+
 export type jhondiCreatedAlias = {
-  jhondiCreated: alias & responseJhondi;
+  jhondiCreated: alias & aliasJhondi;
 };
 
 export type jhondiUpdatedAlias = {
-  jhondiUpdated: alias & responseJhondi;
+  jhondiUpdated: alias & aliasJhondi;
 };
 
 export type createJhondi = {

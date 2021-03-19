@@ -2,7 +2,6 @@ import { CREATED_JHONDI, UPDATED_JHONDI } from './utils/constant';
 import { JhondiService } from './jhondiService';
 import { createJhondi, updateJhondi } from './types';
 import { pubsub } from '../pubsub';
-import dateToString from './utils/date';
 
 export const jhondiMutationResolvers = {
   createJhondi: async (_: any, args: createJhondi) => {
@@ -16,8 +15,6 @@ export const jhondiMutationResolvers = {
         name,
         age,
         email,
-        createdAt: dateToString(createdAt),
-        updatedAt: dateToString(updatedAt),
       },
     });
     return createResponse;
@@ -34,8 +31,6 @@ export const jhondiMutationResolvers = {
         name,
         age,
         email,
-        createdAt: dateToString(createdAt),
-        updatedAt: dateToString(updatedAt),
       },
     });
     return updated;
