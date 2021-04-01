@@ -14,7 +14,7 @@ export const typeDefs = gql`
     hi(times: Int!): Float
     getJc(id: String): Jc
     getJhondi(id: String): Jhondi!
-    getAllJhondi: [Jhondi]
+    getAllJhondi: [Jhondi]!
     getMarky(id: ID!): Marky
     getAllMarky: [Marky]!
 
@@ -36,6 +36,9 @@ export const typeDefs = gql`
 
   type Subscription {
     jcCreated(alias: String!): Jc
+    jhondiCreated(alias: String!): Jhondi
+    jhondiUpdated(alias: String!): Jhondi
+
     markyCreated(alias:String!): Marky
     markyUpdated(alias:String!): Marky
     markyDeleted: String
@@ -82,8 +85,8 @@ export const typeDefs = gql`
   type Jhondi {
     _id: String!
     name: String!
-    age: Int!
-    email: String!
+    age: Int
+    email: String
     createdAt: String
     updatedAt: String
   }

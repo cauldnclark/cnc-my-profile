@@ -10,8 +10,8 @@ import { ianMutationResolvers } from './ian/resolvers/IanMutationResolvers';
 import { ianQueryResolvers } from './ian/resolvers/IanQueryResolvers';
 import { jcSubscriptionResolvers } from './jc/JcSubscriptionResolver';
 import { ianSubscriptionResolvers } from './ian/resolvers/IanSubscriptionResolvers';
+import { jhondiSubscriptionResolvers } from './jhondi/jhondiSubscription';
 import { markySubscriptionResolvers } from './marky/MarkySubs';
-
 
 export const resolvers = {
   Query: {
@@ -34,6 +34,7 @@ export const resolvers = {
   Subscription: {
     ...jcSubscriptionResolvers,
     ...ianSubscriptionResolvers,
+    ...jhondiSubscriptionResolvers,
     ...markySubscriptionResolvers
   },
 };
