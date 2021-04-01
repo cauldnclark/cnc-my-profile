@@ -19,7 +19,6 @@ export const typeDefs = gql`
     getAllMarky: [Marky]!
 
     ${aceQueryTypeDefs}
-
     ${ianQueryTypeDefs}
   }
 
@@ -39,6 +38,10 @@ export const typeDefs = gql`
     jcCreated(alias: String!): Jc
     jhondiCreated(alias: String!): Jhondi
     jhondiUpdated(alias: String!): Jhondi
+
+    markyCreated(alias:String!): Marky
+    markyUpdated(alias:String!): Marky
+    markyDeleted: String
 
     ${ianMutationSubscriptions}
   }

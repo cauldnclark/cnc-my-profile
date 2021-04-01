@@ -6,11 +6,8 @@ import { JcCreate } from './types';
 export const jcMutationResolvers = {
   createJc: async (_: any, args: JcCreate) => {
     const jcService = new JcService();
-
     const resp = await jcService.create(args);
-
     pubsub.publish(JC_CREATED, { jcCreated: resp });
-
     return resp;
   },
 };
