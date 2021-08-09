@@ -12,4 +12,8 @@ export const MARKY_CREATED = 'MARKY_CREATED';
 export const MARKY_UPDATED = 'MARKY_UPDATED';
 export const MARKY_DELETED = 'MARKY_DELETED';
 
+export const KEN_CREATED = 'KEN_CREATED';
+export const KEN_UPDATED = 'KEN_UPDATED';
+export const KEN_ALIAS = 'KEN_ALIAS';
+
 

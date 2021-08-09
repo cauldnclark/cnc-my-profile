@@ -1,3 +1,4 @@
+import { KenQueryResolvers } from './kenneth/KenQueryResolver';
 import { jcMutationResolvers } from './jc/JcMutationResolver';
 import { jcResolvers } from './jc/JcResolver';
 import { jhondiMutationResolvers } from './jhondi/jhondiMutationResolver';
@@ -12,6 +13,7 @@ import { jcSubscriptionResolvers } from './jc/JcSubscriptionResolver';
 import { ianSubscriptionResolvers } from './ian/resolvers/IanSubscriptionResolvers';
 import { jhondiSubscriptionResolvers } from './jhondi/jhondiSubscription';
 import { markySubscriptionResolvers } from './marky/MarkySubs';
+import { KenMutationResolvers } from './kenneth/KenMutationResolver';
 
 export const resolvers = {
   Query: {
@@ -21,6 +23,7 @@ export const resolvers = {
     ...markyResolvers,
     ...aceQueryResolvers,
     ...ianQueryResolvers,
+    ...KenQueryResolvers
   },
 
   Mutation: {
@@ -29,6 +32,7 @@ export const resolvers = {
     ...markyMutationResolvers,
     ...aceMutationResolvers,
     ...ianMutationResolvers,
+    ...KenMutationResolvers
   },
 
   Subscription: {

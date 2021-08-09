@@ -17,7 +17,8 @@ export const typeDefs = gql`
     getAllJhondi: [Jhondi]!
     getMarky(id: ID!): Marky
     getAllMarky: [Marky]!
-
+    getKen(id: String): Ken
+    getAllKen: [Ken]!
     ${aceQueryTypeDefs}
     ${ianQueryTypeDefs}
   }
@@ -29,6 +30,8 @@ export const typeDefs = gql`
     createMarky(input: MarkyInput): Marky
     updateMarky(id: ID!, input: MarkyInput): Marky
     deleteMarky(id:ID): MarkyNotification
+    createKen(name: String, age: Int, email: String, address: String): Ken
+    updateKen(id: String!, name: String, age: Int, email: String, address: String): Ken
     ${aceMutationTypeDefs}
     ${ianMutationTypeDefs}
   }
@@ -44,6 +47,15 @@ export const typeDefs = gql`
     markyDeleted: String
 
     ${ianMutationSubscriptions}
+  }
+  type Ken {
+    _id: String
+    name: String
+    age: Int
+    email: String
+    address: String
+    createdAt:  String
+    updatedAt:  String
   }
 
   type Marky {
