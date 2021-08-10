@@ -1,5 +1,5 @@
-import { KEN_UPDATED } from './../../constants';
-import { KEN_CREATED } from '../../constants';
+import { KEN_CREATED, KEN_UPDATED } from './../../constants';
+
 import { pubsub } from '../pubsub';
 import { KenService } from './KenService';
 import { KenCreate, UpdateKen } from './types';
@@ -18,7 +18,7 @@ export const KenMutationResolvers = {
         const kenService = new KenService();
 
         const resp = await kenService.updateKen(args);
-
+        
         pubsub.publish(KEN_UPDATED, { kenUpdated: resp });
 
         return kenService.updateKen(args);

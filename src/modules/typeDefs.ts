@@ -47,6 +47,9 @@ export const typeDefs = gql`
     markyDeleted: String
 
     ${ianMutationSubscriptions}
+
+    kenCreated(alias: String!): Ken
+    kenUpdated(alias: String!): Ken
   }
   type Ken {
     _id: String

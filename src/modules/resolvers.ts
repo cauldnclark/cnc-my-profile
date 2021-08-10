@@ -14,6 +14,7 @@ import { ianSubscriptionResolvers } from './ian/resolvers/IanSubscriptionResolve
 import { jhondiSubscriptionResolvers } from './jhondi/jhondiSubscription';
 import { markySubscriptionResolvers } from './marky/MarkySubs';
 import { KenMutationResolvers } from './kenneth/KenMutationResolver';
+import { KenSubscriptionResolvers } from './kenneth/KenSubscriptionResolvers';
 
 export const resolvers = {
   Query: {
@@ -39,6 +40,7 @@ export const resolvers = {
     ...jcSubscriptionResolvers,
     ...ianSubscriptionResolvers,
     ...jhondiSubscriptionResolvers,
-    ...markySubscriptionResolvers
+    ...markySubscriptionResolvers,
+    ...KenSubscriptionResolvers
   },
 };
