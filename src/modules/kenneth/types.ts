@@ -16,3 +16,14 @@ export type KenCreate = {
     email: string;
     address: string;
   };
+
+  export type KenAlias = {
+    alias: string;
+  };
+
+  export type KenCreatedAlias = {
+    kenCreated: KenCreate & KenAlias;
+  };
+  export type KenUpdatedAlias = {
+    kenUpdated: UpdateKen & KenAlias;
+  };
